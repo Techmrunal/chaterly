@@ -1,1 +1,1 @@
-# highonchat
+# Chat App using AI - Highonchat
