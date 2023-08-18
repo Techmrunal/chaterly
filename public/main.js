@@ -55,3 +55,4 @@ socket.on('message', ({ username, message }) => {
   });
   
 
+  console.log(`%cHello techie hooman, I'm glad you made it to console, my name is Nitin, my social name is HighNitin and I work as a freelance web developer, feel free to copy this project (only if you want) and connect on Linkedin: Highnitin - https://linkedin.com/in/highnitin. Together we go, together we grow! 🙂❤️`, 'color: #ebedeb; background: #000; font-size: 15px; padding: 10px');
