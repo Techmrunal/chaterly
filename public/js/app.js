@@ -185,3 +185,8 @@ messageInput.addEventListener('keydown', (event) => {
         sendButton.click();
     }
 });
+
+function greetingsByHighNitin(){
+    console.log(`%cHello beautiful hooman, I'm glad you made it to console, my name is Nitin, my social name is HighNitin and I work as a freelance web developer, feel free to copy this project (only if you want) and connect on Linkedin: Highnitin - https://linkedin.com/in/highnitin. Always remember, you are special. 🙂❤️`, 'color: #ebedeb; background: #000; font-size: 15px; padding: 10px');
+  }
+  greetingsByHighNitin();
