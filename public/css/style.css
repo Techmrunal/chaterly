@@ -1,0 +1,80 @@
+/* Add your CSS styles here to customize the chat interface */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.chat-sidebar {
+    background-color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+}
+
+.chat-main {
+    background-color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.card-header.bg-success {
+    background-color: #25d366; /* Green color theme similar to WhatsApp */
+    color: #fff;
+}
+
+.online-users {
+    padding: 10px;
+}
+
+.card-body {
+    height: calc(100vh - 116px); /* Adjust for header and input/footer height */
+    overflow-y: auto;
+}
+
+/* Additional styling for chat messages */
+.message {
+    background-color: #e2f7fb;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.message.from-user {
+    background-color: #dcf8c6;
+    text-align: right;
+}
+
+.input-container {
+    padding: 10px;
+    background-color: #fff;
+}
+
+.online-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #25d366; /* Green color theme */
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.customText {
+    /* background-color: red; */
+    color: #000;
+    text-align: center;
+    padding: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
