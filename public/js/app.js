@@ -6,10 +6,33 @@ const onlineUserCount = document.getElementById('online-user-count');
 const onlineUserList = document.getElementById('online-user-list');
 
 // Function to add a message to the chat
+// function addMessage(message, fromUser = false, senderUsername) {
+//     const messageDiv = document.createElement('div');
+//     messageDiv.className = `message ${fromUser ? 'from-user' : ''}`;
+    
+//     if (fromUser) {
+//         messageDiv.innerHTML = `<strong>You:</strong> ${message}`;
+//     } else if (senderUsername) {
+//         messageDiv.innerHTML = `<strong>${senderUsername}:</strong> ${message}`;
+//     } else {
+//         messageDiv.textContent = message;
+//     }
+    
+//     messageContainer.appendChild(messageDiv);
+
+//     // Log the sender's username to the console
+//     // console.log(`Message from ${senderUsername}: ${message}`);
+// }
+
 function addMessage(message, fromUser = false, senderUsername) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${fromUser ? 'from-user' : ''}`;
-    
+
+    // Replace specific text with emojis
+    for (const [text, emoji] of Object.entries(textToEmojis)) {
+        message = message.replace(new RegExp(text, 'g'), emoji);
+    }
+
     if (fromUser) {
         messageDiv.innerHTML = `<strong>You:</strong> ${message}`;
     } else if (senderUsername) {
@@ -17,12 +40,10 @@ function addMessage(message, fromUser = false, senderUsername) {
     } else {
         messageDiv.textContent = message;
     }
-    
-    messageContainer.appendChild(messageDiv);
 
-    // Log the sender's username to the console
-    // console.log(`Message from ${senderUsername}: ${message}`);
+    messageContainer.appendChild(messageDiv);
 }
+
 
 // addMessage(`Welcome ${username} 👋`);
 
