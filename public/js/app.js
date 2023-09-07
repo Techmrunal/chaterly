@@ -4,6 +4,18 @@ const messageInput = document.getElementById('message-input');
 const sendButton = document.getElementById('send-button');
 const onlineUserCount = document.getElementById('online-user-count');
 const onlineUserList = document.getElementById('online-user-list');
+const textToEmojis = {
+    react: "🏵️",
+    woah: "😮",
+    hey: "👋",
+    lol: "😂",
+    like: "❤️",
+    congratulations: "🎉",
+    flower: "🌹",
+    cake: "🎂",
+    bless: "🙌"
+};
+
 
 // Function to add a message to the chat
 // function addMessage(message, fromUser = false, senderUsername) {
@@ -28,9 +40,10 @@ function addMessage(message, fromUser = false, senderUsername) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${fromUser ? 'from-user' : ''}`;
 
-    // Replace specific text with emojis
+    // Replace specific whole words with emojis
     for (const [text, emoji] of Object.entries(textToEmojis)) {
-        message = message.replace(new RegExp(text, 'g'), emoji);
+        const regex = new RegExp(`\\b${text}\\b`, 'g'); // Use word boundaries to match whole words
+        message = message.replace(regex, emoji);
     }
 
     if (fromUser) {
@@ -43,6 +56,7 @@ function addMessage(message, fromUser = false, senderUsername) {
 
     messageContainer.appendChild(messageDiv);
 }
+
 
 
 // addMessage(`Welcome ${username} 👋`);
@@ -206,8 +220,3 @@ messageInput.addEventListener('keydown', (event) => {
         sendButton.click();
     }
 });
-
-function greetingsByHighNitin(){
-    console.log(`%cHello beautiful hooman, I'm glad you made it to console, my name is Nitin, my social name is HighNitin and I work as a freelance web developer, feel free to copy this project (only if you want) and connect on Linkedin: Highnitin - https://linkedin.com/in/highnitin. Always remember, you are special. 🙂❤️`, 'color: #ebedeb; background: #000; font-size: 15px; padding: 10px');
-  }
-  greetingsByHighNitin();
